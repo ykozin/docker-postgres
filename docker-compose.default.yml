@@ -7,10 +7,9 @@ services:
         image: kozin/postgres
         container_name: postgres_db
         restart: always
-        ports:
-            - 127.0.0.1:5432:5432
+        network_mode: "host"
         environment:
-            POSTGRES_PASSWORD: pass
+            POSTGRES_PASSWORD: "pass"
         volumes:
             - /db_data:/var/lib/postgresql/data
             
