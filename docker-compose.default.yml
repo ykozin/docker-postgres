@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    db:
+        build:
+            context: .
+        image: kozin/postgres
+        container_name: postgres_db
+        restart: always
+        ports:
+            - 127.0.0.1:5432:5432
+        environment:
+            POSTGRES_PASSWORD: pass
+        volumes:
+            - /db_data:/var/lib/postgresql/data
+            
