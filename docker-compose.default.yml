@@ -6,7 +6,7 @@ services:
             context: .
         image: kozin/postgres
         container_name: postgres_db
-        restart: always
+        restart: on-failure
         network_mode: "host"
         environment:
             POSTGRES_PASSWORD: "pass"
