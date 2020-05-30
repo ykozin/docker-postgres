@@ -13,6 +13,7 @@ services:
             POSTGRES_PASSWORD: "pass"
         volumes:
             - /db_data:/var/lib/postgresql/data
+            - /db_backups:/backups
 
 networks:
     db_network:
