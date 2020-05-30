@@ -1,4 +1,4 @@
-version: '3'
+version: "3.5"
 
 services:
     db:
@@ -7,9 +7,15 @@ services:
         image: kozin/postgres
         container_name: postgres_db
         restart: on-failure
-        network_mode: "host"
+        networks:
+            - db_network
+        ports:
+            - "127.0.0.1:5432:5432"
         environment:
             POSTGRES_PASSWORD: "pass"
         volumes:
             - /db_data:/var/lib/postgresql/data
-            
+
+networks:
+    db_network:
+        name: db_network

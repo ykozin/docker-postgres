@@ -39,3 +39,12 @@ docker-compose down
 ```shell script
 psql -hlocalhost -Upostgres
 ```
+
+# SELinux
+
+Если в системе используеться SELinux, тогда необходимо изменить тип контента всех
+папок приложения.
+
+```shell script
+chcon -Rt svirt_sandbox_file_t /postgres_db
+```
