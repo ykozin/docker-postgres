@@ -9,8 +9,6 @@ services:
         restart: on-failure
         networks:
             - db_network
-        ports:
-            - "127.0.0.1:5432:5432"
         environment:
             POSTGRES_PASSWORD: "pass"
         volumes:
